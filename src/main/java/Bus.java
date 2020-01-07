@@ -37,4 +37,11 @@ public class Bus {
             this.passangerList.remove(0);
         }
     }
+
+    public void addPassangerFromQueue(BusStop busStop) {
+        if(busStop.countPassenger() > 0){
+            Passanger passangerFromQueue = busStop.removePassanger();
+            addPassanger(passangerFromQueue);
+        }
+    }
 }

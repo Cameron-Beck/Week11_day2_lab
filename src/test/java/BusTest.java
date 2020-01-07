@@ -7,11 +7,13 @@ public class BusTest {
 
     private Bus bus;
     private Passanger passanger;
+    private BusStop busStop;
 
     @Before
     public void before() {
         bus = new Bus("Ocean Terminal", 5);
         passanger = new Passanger();
+        busStop = new BusStop("Leith Walk");
     }
         @Test
         public void hasDestination(){
@@ -35,7 +37,7 @@ public class BusTest {
         }
 
         @Test
-        public void addPassangerIfBusIsFull(){
+        public void notPassangerIfBusIsFull(){
             bus.addPassanger(passanger);
             bus.addPassanger(passanger);
             bus.addPassanger(passanger);
@@ -56,6 +58,14 @@ public class BusTest {
         public void removePassangerFromEmptyBus(){
         bus.removePassanger();
         assertEquals(0, bus.countPassangers());
+        }
+
+        @Test
+        public void addPassangerFromQueueIfThereAny(){
+        busStop.addPassenger(passanger);
+        bus.addPassangerFromQueue(busStop);
+        assertEquals(1, bus.countPassangers());
+        assertEquals(0, busStop.countPassenger());
         }
 
 }
