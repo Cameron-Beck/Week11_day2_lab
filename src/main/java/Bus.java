@@ -24,4 +24,11 @@ public class Bus {
     public int countPassangers() {
         return this.passangerList.size();
     }
+
+
+    public void addPassanger(Passanger passanger) {
+        if (countPassangers() < capacity){
+            this.passangerList.add(passanger);
+        }
+    }
 }

@@ -28,4 +28,21 @@ public class BusTest {
         assertEquals(0, bus.countPassangers());
         }
 
+        @Test
+        public void addPassangerIFBusNotFull(){
+        bus.addPassanger(passanger);
+        assertEquals(1, bus.countPassangers());
+        }
+
+        @Test
+        public void addPassangerIfBusIsFull(){
+            bus.addPassanger(passanger);
+            bus.addPassanger(passanger);
+            bus.addPassanger(passanger);
+            bus.addPassanger(passanger);
+            bus.addPassanger(passanger);
+            bus.addPassanger(passanger);
+            assertEquals(5, bus.countPassangers());
+        }
+
 }
