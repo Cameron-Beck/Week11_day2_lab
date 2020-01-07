@@ -10,22 +10,22 @@ public class BusTest {
 
     @Before
     public void before() {
-        bus = new Bus("Ocean Terminal");
+        bus = new Bus("Ocean Terminal", 5);
         passanger = new Passanger();
     }
         @Test
         public void hasDestination(){
             assertEquals("Ocean Terminal", bus.getDestination());
         }
-
+//
         @Test
         public void hasCapacity(){
             assertEquals(5, bus.getCapacity());
         }
-
+//
         @Test
         public void countPassangers(){
-        assertEquals(0, bus.countPasangers());
+        assertEquals(0, bus.countPassangers());
         }
 
 }
