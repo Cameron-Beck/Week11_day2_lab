@@ -31,4 +31,10 @@ public class Bus {
             this.passangerList.add(passanger);
         }
     }
+
+    public void removePassanger() {
+        if (countPassangers() > 0) {
+            this.passangerList.remove(0);
+        }
+    }
 }
